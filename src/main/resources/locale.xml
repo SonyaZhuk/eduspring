@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+
+  <bean name="EnglishLocaleBean" class="java.util.Locale">
+    <constructor-arg value="en"/>
+    <constructor-arg value="US"/>
+  </bean>
+
+  <bean name="FrenchLocaleBean" class="java.util.Locale">
+    <constructor-arg value="fr"/>
+    <constructor-arg value="CA"/>
+  </bean>
+
+
+</beans>

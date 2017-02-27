@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+  <bean name="PriceAnalystBean" class="com.epam.week4.exchange.entity.PriceAnalyst">
+    <constructor-arg value = "Sofya Zhuk"/>
+    <constructor-arg>
+      <value type="com.epam.week4.exchange.TypeDisplay">CONSOLE</value>
+    </constructor-arg>
+    <constructor-arg ref="EnglishLocaleBean"/>
+  </bean>
+
+  <bean name="IndexAnalystBean" class="com.epam.week4.exchange.entity.IndexAnalyst">
+    <constructor-arg value = "Vasya Petrov"/>
+    <constructor-arg>
+      <value type="com.epam.week4.exchange.TypeDisplay">CONSOLE</value>
+    </constructor-arg>
+    <constructor-arg ref="FrenchLocaleBean"/>
+  </bean>
+
+
+  <bean name="ObserverPricesBean" class="com.epam.week4.exchange.observers.implobservers.ObserverPricesImpl">
+    <constructor-arg ref="ExchangeDataBean"/>
+    <constructor-arg ref="PriceAnalystBean"/>
+  </bean>
+
+  <bean name="ObserverIndexBean" class="com.epam.week4.exchange.observers.implobservers.ObserverIndexImpl">
+    <constructor-arg ref="ExchangeDataBean"/>
+    <constructor-arg ref="IndexAnalystBean"/>
+  </bean>
+
+</beans>
